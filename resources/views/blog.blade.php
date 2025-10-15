@@ -1,3 +1,3 @@
 <x-layout :title="$title">
-        <p>Welcome To Contact Page</p>
+        <p>Welcome To Blog Page</p>
 </x-layout>

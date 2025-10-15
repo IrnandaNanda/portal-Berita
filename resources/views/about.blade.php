@@ -1,8 +1,3 @@
-@extends('layouts.app')
-
-
-@section('title', $title)
-
-@section('content')
-    <p>This is About page with Inheritance</p>
-@endsection
+<x-layout :title="$title">
+        <p>Welcome To About Page</p>
+</x-layout>
