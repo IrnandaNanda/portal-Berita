@@ -10,7 +10,7 @@
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- request : Untuk menerima props -->
                                 <x-nav-link href='/' :current="request()->is('/')">Home</x-nav-link>
-                                <x-nav-link href='/blog' :current="request()->is('blog')">Blog</x-nav-link>
+                                <x-nav-link href='/posts' :current="request()->is('posts')">Blog</x-nav-link>
                                 <x-nav-link href='/about' :current="request()->is('about')">About</x-nav-link>
                                 <x-nav-link href='/contact' :current="request()->is('contact')">Contact</x-nav-link>
                             </div>
@@ -66,9 +66,9 @@
 
             <el-disclosure id="mobile-menu" hidden class="block md:hidden">
                 <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-                    <!-- request : Untuk menerima props -->
+                    <!-- request : Fungsi global Laravel untuk mendapatkan objek HTTP request saat ini -->
                     <x-nav-link class="block" href='/' :current="request()->is('/')">Home</x-nav-link>
-                    <x-nav-link class="block" href='/blog' :current="request()->is('blog')">Blog</x-nav-link>
+                    <x-nav-link class="block" href='/posts' :current="request()->is('posts')">Blog</x-nav-link>
                     <x-nav-link class="block" href='/about' :current="request()->is('about')">About</x-nav-link>
                     <x-nav-link class="block" href='/contact' :current="request()->is('contact')">Contact</x-nav-link>
                 </div>
