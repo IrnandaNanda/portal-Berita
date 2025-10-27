@@ -15,8 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')->references('id')->on('users'); // table author_id akan berhubungan dengan kolom id yang berada dalam table users
+            // $table->unsignedBigInteger('author_id');
+            // $table->foreign('author_id')->references('id')->on('users'); 
+            // table author_id akan berhubungan dengan kolom id yang berada dalam table users
+            $table->foreignId('author_id')->constrained(
+                table: 'users',
+                indexName: 'posts_author_id'
+            );
+            // Tabel category_id akan berhubungan dengan kolom id yang berada dalam tabel categories
+            $table->foreignId('category_id')->constrained(
+                table:'categories',
+                indexName: 'posts_category_id'
+            );
             $table->text('body');
             $table->timestamps();
         });

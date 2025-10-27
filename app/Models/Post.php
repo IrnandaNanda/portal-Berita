@@ -15,8 +15,16 @@ class Post extends Model
     protected   $fillable = ['title', 'author', 'slug', 'body'];
 
     // untuk relationship database one to one
+    // 1 Post hanya boleh memiliki 1 author
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    // untuk Eloquent relationships one to one
+    // 1 Post hanya boleh memiliki 1 category
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }
