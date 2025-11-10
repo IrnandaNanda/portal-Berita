@@ -14,6 +14,9 @@ class Post extends Model
     // Untuk Melindungi dari user yang ingin mengirimkan data melalui Request HTTP
     protected   $fillable = ['title', 'author', 'slug', 'body'];
 
+    // Untuk menggunakan Eager Loading
+    protected $with = ['category', 'author'];
+
     // untuk relationship database one to one
     // 1 Post hanya boleh memiliki 1 author
     public function author(): BelongsTo

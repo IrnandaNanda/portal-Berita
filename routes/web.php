@@ -21,6 +21,9 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 
 // Route Model Binding
 Route::get('/authors/{user:username}', function (User $user) {
+    // Eager Loading in Routes
+    // $posts = Post::with(['author', 'category'])->latest()->get();
+
     return view('posts', ['title' => count($user->posts) . ' Article By. ' . $user->name, 'posts' => $user->posts]);
 });
 
